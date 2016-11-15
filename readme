@@ -1,9 +1,0 @@
-<!-- https://mvnrepository.com/artifact/io.swagger/swagger-core -->
-<dependency>
-    <groupId>io.swagger</groupId>
-    <artifactId>swagger-core</artifactId>
-    <version>1.5.10</version>
-</dependency>
-
-
-https://github.com/cesinrm/spark-swagger/blob/master/src/main/java/me/serol/spark_swagger/App.java
