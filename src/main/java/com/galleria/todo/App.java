@@ -1,22 +1,44 @@
 package com.galleria.todo;
 
-import com.galleria.todo.controller.TodoController;
-import com.galleria.todo.util.Constants;
-import static spark.Spark.*;
+import static spark.Spark.delete;
+import static spark.Spark.get;
+import static spark.Spark.port;
+import static spark.Spark.post;
+import static spark.Spark.put;
 
-/**
- * Hello world!
- *
- */
+import com.galleria.todo.constants.TodoApiConstants;
+import com.galleria.todo.controller.TodoController;
+
 public class App 
 {
+	private static int port = 8083;
+	
     public static void main( String[] args ){
-    	port(8083);
-        //get( Constants.getAllTodos , TodoController.getAllTodo );
-    	get( "/dd" , (req,res)->{
-    		return "Hello world";
-    	});
-    	get( Constants.getAllTodos , TodoController.getAllTodos );
+    	setupService();
+    	initialService();
+    	setupSwaggerService();
+    }
+    
+    private static void setupService(){
+    	port( port );
+    }
+    
+    private static void initialService(){
+    	get( TodoApiConstants.getAllTodos , TodoController.getAllTodos );
+    	get( TodoApiConstants.getTodoById , TodoController.getTodoById );
+    	get( TodoApiConstants.getTodoByStatus , TodoController.getTodoByStatus );
+    	
+    	post( TodoApiConstants.createTodo , TodoController.createTodo );
+    	
+    	put( TodoApiConstants.editTodo , TodoController.createTodo );
+    	put( TodoApiConstants.updateTodoStatusById , TodoController.updateTodoStatusById );
+    	
+    	delete( TodoApiConstants.deleteTodoById , TodoController.deteleTodoById );
+    	
+    }
+    
+    private static void setupSwaggerService(){
+    	
     }
     
 }

@@ -1,10 +1,19 @@
 package com.galleria.todo.model;
 
 public class Todo {
+	
 	public String id;
-	public Boolean status;
 	public String topic;
 	public String content;
+	public Boolean status;
+
+	public Todo(String id, String topic, String content, Boolean status) {
+		super();
+		this.id = id;
+		this.topic = topic;
+		this.content = content;
+		this.status = status;
+	}
 	
 	public String getId() {
 		return id;

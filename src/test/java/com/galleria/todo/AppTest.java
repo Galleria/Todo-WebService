@@ -1,4 +1,4 @@
-package com.galleria.todo.service;
+package com.galleria.todo;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
