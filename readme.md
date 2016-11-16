@@ -26,19 +26,22 @@ ___
 ___
 
 ###How to Compile Todo WebService
-- via maven
+- go to repository path
+- mvn clean install
+* please make sure about maven and java jdk setup.
 
 ###How to Run Todo WebService
-- java -jar xxxxx.jar
+- default port 8083
+- java -jar todo-service-0.0.1-jar-with-dependencies.jar
 
 ___
 
 ###WIP (work in progress)
 - ~~design architecture~~
-- ~~create api~~
-- add unit testing
+- create todo api (wip)
+- add unit testing (wip)
 - plugin swagger 
-- compile and packing process
+- ~~compile and packing process~~
 
 ___
 
