@@ -43,14 +43,15 @@ ___
 ___
 
 ###API 
-|       Detail       |          Service           |
-|--------------------|----------------------------|
-| get all todo list  |   /todos                   |
-| get todo by id     |   /todos/:id               |
-| create todo task   |   /todo/create             |
-| edit todo task     |   /todo/:id/edit           |
-| update todo task   |   /todo/:id/status/:status |
-| delete todo task   |   /todo/:id/delete         |
+|       Detail            |          Service           |
+|-------------------------|----------------------------|
+| get all todo list       |   /todos                   |
+| get todo by id          |   /todos/:id               |
+| get todo list by status |   /todos                   |
+| create todo task        |   /todo/create             |
+| edit todo task          |   /todo/:id/edit           |
+| update todo task        |   /todo/:id/status/:status |
+| delete todo task        |   /todo/:id/delete         |
 
 ###Todo Model
 - id
