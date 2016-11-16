@@ -34,8 +34,8 @@ ___
 ___
 
 ###WIP (work in progress)
-- design architecture
-- create api
+- ~~design architecture~~
+- ~~create api~~
 - add unit testing
 - plugin swagger 
 - compile and packing process
