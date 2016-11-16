@@ -1,19 +1,26 @@
 #Todo WebService is created via spark java framework and uses swagger for api document. 
+
+see api document on swagger 
 ___
+
 ###Software Architure 
 - java 1.8
 - maven
 ___
+
 ###Software libraries and framework
 - spark
 - swagger
 - gson
 - junit
 - mockito
+
 ___
+
 ###Standard format 
 - json
-- plain text
+- plain dssad
+
 ___
 
 ###How to Compile Todo WebService
