@@ -47,7 +47,7 @@ ___
 |-------------------------|----------------------------|
 | get all todo list       |   /todos                   |
 | get todo by id          |   /todos/:id               |
-| get todo list by status |   /todos                   |
+| get todo list by status |   /todos/:status           |
 | create todo task        |   /todo/create             |
 | edit todo task          |   /todo/:id/edit           |
 | update todo task        |   /todo/:id/status/:status |
