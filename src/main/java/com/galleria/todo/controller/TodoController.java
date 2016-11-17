@@ -1,5 +1,9 @@
 package com.galleria.todo.controller;
 
+
+import java.util.ArrayList;
+import java.util.List;
+
 import com.galleria.todo.model.Todo;
 import com.galleria.todo.model.response.TodoResponse;
 import com.galleria.todo.service.TodoService;
@@ -23,32 +27,49 @@ public class TodoController {
 	}
 	
 	public Route getAllTodos = (Request request, Response response) ->{
-		return todoService.getAllTodos();
+		List<Todo> todos = todoService.getAllTodos();
+		List<TodoResponse> todoResList = new ArrayList<>();
+		todos.forEach( todo -> {
+			todoResList.add( new TodoResponse(todo) );
+		});
+		return todoResList;
 	};
 	
 	public Route getTodoById = (Request request, Response response) ->{
 		String id = request.params(":id");
-		return todoService.getTodoById(id);
+		Todo todo = todoService.getTodoById(id);
+		TodoResponse todoRes = (todo == null) ? null : new TodoResponse(todo);
+		return todoRes;
 	};
 	
 	public Route getTodoByStatus = (Request request, Response response) ->{
 		String statusStr = request.params(":status");
-		Boolean status = ( statusStr.equalsIgnoreCase("pending") ) ? false : true;
-		return todoService.getTodosByStatus(status);
+		Boolean status;
+		if( statusStr.equalsIgnoreCase("pending") || statusStr.equalsIgnoreCase("done") ){
+			status = ( statusStr.equalsIgnoreCase("pending") ) ? false : true;
+		}else{
+			status = Boolean.parseBoolean( request.params(":status") );
+		}
+		List<Todo> todos = todoService.getTodosByStatus(status);
+		List<TodoResponse> todoResList = new ArrayList<>();
+		todos.forEach( todo -> {
+			todoResList.add( new TodoResponse(todo) );
+		});
+		return todoResList;
 	};
 	
 	public Route createTodo = (Request request, Response response) ->{
 		Todo todo = gson.fromJson(  request.body() , Todo.class ); 
 		todo = todoService.createTodo(todo);
-		TodoResponse tdRes = new TodoResponse( todo );
-		return tdRes;
+		TodoResponse todoRes = (todo == null) ? null : new TodoResponse(todo);
+		return todoRes;
 	};
 	
 	public Route updateTodo = (Request request, Response response) ->{
 		Todo todo = gson.fromJson(  request.body() , Todo.class ); 
 		todo = todoService.updateTodoById( todo.getId() , todo);
-		TodoResponse tdRes = new TodoResponse( todo );
-		return tdRes;
+		TodoResponse todoRes = (todo == null) ? null : new TodoResponse(todo);
+		return todoRes;
 	};
 	
 	public Route updateTodoStatusById = (Request request, Response response) ->{
@@ -62,8 +83,8 @@ public class TodoController {
 		String id = request.params(":id");
 		
 		Todo todo = todoService.updateTodoStatusById( id , status );
-		TodoResponse tdRes = new TodoResponse( todo );
-		return tdRes;
+		TodoResponse todoRes = (todo == null) ? null : new TodoResponse(todo);
+		return todoRes;
 	};
 	
 	public Route deteleTodoById = (Request request, Response response) ->{

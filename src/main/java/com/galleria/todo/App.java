@@ -8,6 +8,7 @@ import static spark.Spark.put;
 
 import com.galleria.todo.constants.TodoApiConstants;
 import com.galleria.todo.controller.TodoController;
+import com.google.gson.Gson;
 
 public class App 
 {
@@ -25,14 +26,14 @@ public class App
     
     private static void initialService(){
     	TodoController todoController = new TodoController();
-    	get( TodoApiConstants.getAllTodos , todoController.getAllTodos );
-    	get( TodoApiConstants.getTodoById , todoController.getTodoById );
-    	get( TodoApiConstants.getTodoByStatus , todoController.getTodoByStatus );
+    	get( TodoApiConstants.getAllTodos , todoController.getAllTodos , new Gson()::toJson);
+    	get( TodoApiConstants.getTodoById , todoController.getTodoById , new Gson()::toJson);
+    	get( TodoApiConstants.getTodoByStatus , todoController.getTodoByStatus , new Gson()::toJson);
     	
-    	post( TodoApiConstants.createTodo , todoController.createTodo );
+    	post( TodoApiConstants.createTodo , todoController.createTodo , new Gson()::toJson);
     	
-    	put( TodoApiConstants.editTodo , todoController.createTodo );
-    	put( TodoApiConstants.updateTodoStatusById , todoController.updateTodoStatusById );
+    	put( TodoApiConstants.editTodo , todoController.createTodo , new Gson()::toJson);
+    	put( TodoApiConstants.updateTodoStatusById , todoController.updateTodoStatusById , new Gson()::toJson);
     	
     	delete( TodoApiConstants.deleteTodoById , todoController.deteleTodoById );
     	

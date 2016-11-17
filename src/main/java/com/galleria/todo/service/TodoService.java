@@ -12,10 +12,20 @@ public class TodoService {
 
 	public TodoService() {
 		this.todosList = new ArrayList<>();
+		mockTodos();
 	}
 	
 	public TodoService(List<Todo> todos) {
 		this.todosList = todos;
+	}
+	
+	private Boolean pending = false;
+	private Boolean done = true;
+	
+	private void mockTodos(){
+		todosList.add( new Todo( "1" , "Create Todo Service" , "For Testing" , pending ) ) ;
+		todosList.add( new Todo( "2" , "Create Api Document" , "..." , pending ) );
+		todosList.add( new Todo( "3" , "Design Architecture" , "Fantastic" , done ) );
 	}
 	
 	public List<Todo> getAllTodos(){
