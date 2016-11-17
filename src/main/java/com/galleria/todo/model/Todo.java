@@ -2,10 +2,10 @@ package com.galleria.todo.model;
 
 public class Todo {
 	
-	public String id;
-	public String topic;
-	public String content;
-	public Boolean status;
+	private String id;
+	private String topic;
+	private String content;
+	private Boolean status;
 
 	public Todo(String id, String topic, String content, Boolean status) {
 		super();
@@ -15,6 +15,13 @@ public class Todo {
 		this.status = status;
 	}
 	
+	public Todo(String topic, String content, Boolean status) {
+		super();
+		this.topic = topic;
+		this.content = content;
+		this.status = status;
+	}
+
 	public String getId() {
 		return id;
 	}

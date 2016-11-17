@@ -1,5 +1,6 @@
 package com.galleria.todo.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
@@ -10,6 +11,7 @@ public class TodoService {
 	private List<Todo> todosList;
 
 	public TodoService() {
+		this.todosList = new ArrayList<>();
 	}
 	
 	public TodoService(List<Todo> todos) {

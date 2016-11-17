@@ -24,16 +24,17 @@ public class App
     }
     
     private static void initialService(){
-    	get( TodoApiConstants.getAllTodos , TodoController.getAllTodos );
-    	get( TodoApiConstants.getTodoById , TodoController.getTodoById );
-    	get( TodoApiConstants.getTodoByStatus , TodoController.getTodoByStatus );
+    	TodoController todoController = new TodoController();
+    	get( TodoApiConstants.getAllTodos , todoController.getAllTodos );
+    	get( TodoApiConstants.getTodoById , todoController.getTodoById );
+    	get( TodoApiConstants.getTodoByStatus , todoController.getTodoByStatus );
     	
-    	post( TodoApiConstants.createTodo , TodoController.createTodo );
+    	post( TodoApiConstants.createTodo , todoController.createTodo );
     	
-    	put( TodoApiConstants.editTodo , TodoController.createTodo );
-    	put( TodoApiConstants.updateTodoStatusById , TodoController.updateTodoStatusById );
+    	put( TodoApiConstants.editTodo , todoController.createTodo );
+    	put( TodoApiConstants.updateTodoStatusById , todoController.updateTodoStatusById );
     	
-    	delete( TodoApiConstants.deleteTodoById , TodoController.deteleTodoById );
+    	delete( TodoApiConstants.deleteTodoById , todoController.deteleTodoById );
     	
     }
     
