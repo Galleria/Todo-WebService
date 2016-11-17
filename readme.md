@@ -1,7 +1,8 @@
 #Todo WebService 
 It's created via spark java framework and uses swagger for api document. 
 
-see api document on swagger 
+see api document on swagger (when you started server already)
+http://127.0.0.1:8083/
 ___
 
 ###Software Architure 
@@ -21,13 +22,13 @@ ___
 
 ###Standard format 
 - json
-- plain dssad
+- plain/text
 
 ___
 
 ###How to Compile Todo WebService
 - go to repository path
-- mvn clean install
+- run cmd -> mvn clean install
 * please make sure about maven and java jdk setup.
 
 ###How to Run Todo WebService
@@ -38,9 +39,9 @@ ___
 
 ###WIP (work in progress)
 - ~~design architecture~~
-- create todo api (wip)
-- add unit testing (wip)
-- plugin swagger 
+- ~~create todo api~~
+- ~~add unit testing~~
+- plugin swagger (wip)
 - ~~compile and packing process~~
 
 ___
@@ -60,4 +61,4 @@ ___
 - id
 - subject
 - content
-- status (pending/done)
+- TodoStatus (pending/done)
