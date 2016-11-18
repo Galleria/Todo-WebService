@@ -9,6 +9,7 @@ import static spark.Spark.options;
 
 import static spark.Spark.before;
 import static spark.Spark.after;
+import static spark.Spark.staticFileLocation;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.galleria.todo.constants.Constants;
@@ -48,7 +49,9 @@ public class App {
 
 	private static void setupService() {
 		port(port);
-		Spark.staticFiles.location(Constants.swaggerUIPath);
+		staticFileLocation(Constants.swaggerUIPath);
+		Spark.staticFiles.disableMimeTypeGuessing();
+		
 		before( new CorsFilter() );
 		after( (req,res) -> {
 			res.type("application/json");
