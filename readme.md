@@ -58,7 +58,6 @@ ___
 | edit todo task          |   /todo/:id/edit           |
 | update todo task        |   /todo/:id/status/:status |
 | delete todo task        |   /todo/:id/delete         |
-|-------------------------|----------------------------|
 
 ###Todo Model
 - id
