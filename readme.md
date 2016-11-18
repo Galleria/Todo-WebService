@@ -1,8 +1,20 @@
 #Todo WebService 
 It's created via spark java framework and uses swagger for api document. 
 
-see api document on swagger (when you started server already)
-http://127.0.0.1:8083/
+see api document on swagger (after you started server already) -> http://127.0.0.1:8083/
+___
+
+Instruction Compile&Run
+
+###How to Compile Todo WebService
+- go to repository path
+- run cmd -> mvn clean install
+** please make sure about maven and java jdk setup.
+
+###How to Run Todo WebService
+- default port 8083
+- java -jar todo-service-0.0.1-jar-with-dependencies.jar
+
 ___
 
 ###Software Architure 
@@ -26,17 +38,6 @@ ___
 
 ___
 
-###How to Compile Todo WebService
-- go to repository path
-- run cmd -> mvn clean install
-* please make sure about maven and java jdk setup.
-
-###How to Run Todo WebService
-- default port 8083
-- java -jar todo-service-0.0.1-jar-with-dependencies.jar
-
-___
-
 ###WIP (work in progress)
 - ~~design architecture~~
 - ~~create todo api~~
@@ -56,6 +57,7 @@ ___
 | edit todo task          |   /todo/:id/edit           |
 | update todo task        |   /todo/:id/status/:status |
 | delete todo task        |   /todo/:id/delete         |
+|-------------------------|----------------------------|
 
 ###Todo Model
 - id
