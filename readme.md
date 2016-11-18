@@ -4,7 +4,7 @@ It's created via spark java framework and uses swagger for api document.
 see api document on swagger (after you started server already) -> http://127.0.0.1:8083/
 ___
 
-Instruction Compile&Run
+##Instruction Compile&Run
 
 ###How to Compile Todo WebService
 - go to repository path
@@ -42,9 +42,10 @@ ___
 - ~~design architecture~~
 - ~~create todo api~~
 - ~~add unit testing~~
-- plugin swagger (wip)
+- ~~plugin swagger (wip)~~
 - ~~compile and packing process~~
-
+- adjust source code
+- fix issues
 ___
 
 ###API 
